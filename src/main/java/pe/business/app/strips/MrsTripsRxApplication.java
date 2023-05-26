@@ -15,31 +15,19 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 
 import io.r2dbc.spi.ConnectionFactory;
 
-@EnableR2dbcRepositories
+
 @EnableWebFlux
 @EnableR2dbcAuditing
 @SpringBootApplication
 public class MrsTripsRxApplication {
 
-	@Bean
-	ConnectionFactoryInitializer initializer(ConnectionFactory connectionFactory) {
 
-		ConnectionFactoryInitializer initializer = new ConnectionFactoryInitializer();
-		initializer.setConnectionFactory(connectionFactory);
-		CompositeDatabasePopulator populator = new CompositeDatabasePopulator();
-		populator.addPopulators(new ResourceDatabasePopulator(new ClassPathResource("schema.sql")));
-		populator.addPopulators(new ResourceDatabasePopulator(new ClassPathResource("data.sql")));
-		initializer.setDatabasePopulator(populator);
-
-		return initializer;
+	public static void main(String[] args) {
+		SpringApplication.run(MrsTripsRxApplication.class, args);
 	}
 
 	@Bean
 	ReactiveTransactionManager transactionManager(ConnectionFactory connectionFactory) {
 		return new R2dbcTransactionManager(connectionFactory);
 	}
-	public static void main(String[] args) {
-		SpringApplication.run(MrsTripsRxApplication.class, args);
-	}
-
 }
