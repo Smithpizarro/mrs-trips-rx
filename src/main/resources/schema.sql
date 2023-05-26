@@ -1,0 +1,4 @@
+--CREATE TABLE IF NOT EXISTS location (id INT NOT NULL AUTO_INCREMENT, type VARCHAR(255), coordinatex VARCHAR(255), coordinatey VARCHAR(255), PRIMARY KEY (id));
+--CREATE TABLE IF NOT EXISTS address (id INT NOT NULL AUTO_INCREMENT, dates VARCHAR(255), addresss VARCHAR(255), location_id INT, PRIMARY KEY (id));
+CREATE TABLE IF NOT EXISTS trip (id INT NOT NULL AUTO_INCREMENT, start_date VARCHAR(255), start_address VARCHAR(255), start_type VARCHAR(255), start_coordinates VARCHAR(255),
+ end_date VARCHAR(255), end_address VARCHAR(255), end_type VARCHAR(255), end_coordinates VARCHAR(255), country VARCHAR(255), city VARCHAR(255), passenger VARCHAR(255), driver VARCHAR(255), car VARCHAR(255), status VARCHAR(40),check_code INT,price DECIMAL, PRIMARY KEY (id));
