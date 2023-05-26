@@ -26,8 +26,5 @@ public class MrsTripsRxApplication {
 		SpringApplication.run(MrsTripsRxApplication.class, args);
 	}
 
-	@Bean
-	ReactiveTransactionManager transactionManager(ConnectionFactory connectionFactory) {
-		return new R2dbcTransactionManager(connectionFactory);
-	}
+
 }
