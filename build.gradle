@@ -14,13 +14,6 @@ configurations {
 	}
 }
 
-jar {
-	manifest {
-		attributes(
-				'Main-Class': 'pe.business.app.strips.MrsTripsRxApplication'
-		)
-	}
-}
 
 
 repositories {
