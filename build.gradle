@@ -15,6 +15,15 @@ configurations {
 }
 
 
+jar {
+	manifest {
+		attributes(
+				'Class-Path': configurations.compile.collect { it.getName() }.join(' '),
+				'Main-Class': 'pe.business.app.strips.MrsTripsRxApplication'
+		)
+	}
+}
+
 
 repositories {
 	mavenCentral()
